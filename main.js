@@ -1,12 +1,12 @@
 const menuToggle = document.getElementById('menuToggle');
 const sideMenu = document.getElementById('sideMenu');
 const overlay = document.getElementById('overlay');
-  
-  // Toggle menu
-  menuToggle.addEventListener('click', () => {
-    sideMenu.classList.toggle('active');
-    overlay.style.display = sideMenu.classList.contains('active') ? 'block' : 'none';
-  });
+
+// Toggle menu
+menuToggle.addEventListener('click', () => {
+  sideMenu.classList.toggle('active');
+  overlay.style.display = sideMenu.classList.contains('active') ? 'block' : 'none';
+});
 
 // Close when clicking a link
 const sideMenuLinks = document.querySelectorAll('#sideMenu a');
@@ -21,20 +21,4 @@ sideMenuLinks.forEach(link => {
 overlay.addEventListener('click', () => {
   sideMenu.classList.remove('active');
   overlay.style.display = 'none';
-});
-
-window.onbeforeunload = function () {
-  window.scrollTo(0, 0);
-}
-window.addEventListener("load", function() {
-  setTimeout(() => window.scrollTo(0, 0), 0);
-});
-
-// Close side menu when a link is clicked
-const sideMenuLinks = document.querySelectorAll('#sideMenu a');
-
-sideMenuLinks.forEach(link => {
-  link.addEventListener('click', () => {
-    sideMenu.classList.remove('active');
-  });
 });
