@@ -43,9 +43,20 @@
       <p>A 45-minute session to uncover your challenges and identify opportunities for alignment.</p>
       <p><strong>Who it's for:</strong> Individuals, entrepreneurs, or leaders seeking clarity.</p>
       <p><strong>Outcome:</strong> Walk away with actionable insights and a clear next step.</p>
-      <a href="#contact" style="display: inline-block; padding: 10px 20px; background-color: #d9b382; color: #fff; text-decoration: none; border-radius: 5px;">Book Your Discovery Call</a>
+      <a href="#contact" id="bookCallBtn" class="book-btn" style="display: inline-block; padding: 10px 20px; background-color: #d9b382; color: #fff; text-decoration: none; border-radius: 5px;">Book Your Discovery Call</a>
     </div>
-    
+    <!-- Discovery Call Modal-->
+    <div id="callModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Book Your Discovery Call</h2>
+    <!-- Calendly inline embed -->
+    <div class="calendly-inline-widget" 
+         data-url="https://calendly.com/your-calendly-link" 
+         style="min-width:320px;height:600px;">
+    </div>
+  </div>
+</div>
     <!-- Coaching -->
     <div style="flex: 1 1 300px; padding: 20px; border: 1px solid #eee; border-radius: 8px; background-color: #fdf7f0;">
       <h3>Coaching (Personal & Business)</h3>
@@ -100,5 +111,8 @@
   </footer>
   <script src="main.js">
   </script>
+<!-- Calendly script -->
+<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
+
 </body>
 </html>
