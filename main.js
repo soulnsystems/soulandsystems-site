@@ -13,12 +13,14 @@ const sideMenuLinks = document.querySelectorAll('#sideMenu a');
 sideMenuLinks.forEach(link => {
   link.addEventListener('click', () => {
     sideMenu.classList.remove('active');
-    overlay.style.display = 'none';
   });
 });
-
+document.querySelectorAll('#sideMenu a').forEach(link => {
+  link.addEventListener('click', () => {
+    sideMenu.classList.remove('active');
+  });
+});
 // Close when clicking outside (overlay)
 overlay.addEventListener('click', () => {
   sideMenu.classList.remove('active');
-  overlay.style.display = 'none';
 });
