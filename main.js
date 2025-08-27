@@ -1,7 +1,23 @@
 const menuToggle = document.getElementById('menuToggle');
 const sideMenu = document.getElementById('sideMenu');
 const overlay = document.getElementById('overlay');
+const bookBtn = document.getElementById('bookCallBtn');
+const callModal = document.getElementById('callModal');
+const closeBtn = document.querySelector('.modal .close');
 
+bookBtn.addEventListener('click', () => {
+  callModal.style.display = 'block';
+});
+
+closeBtn.addEventListener('click', () => {
+  callModal.style.display = 'none';
+});
+
+window.addEventListener('click', (e) => {
+  if(e.target == callModal){
+    callModal.style.display = 'none';
+  }
+});
 // Toggle menu
 menuToggle.addEventListener('click', () => {
   sideMenu.classList.toggle('active');
