@@ -5,6 +5,9 @@
   --highlight-color: #594f43;
   --soft-white: #ffffff;
 }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
