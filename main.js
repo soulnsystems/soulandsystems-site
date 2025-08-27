@@ -1,8 +1,9 @@
-<script>
-const menuToggle = document.getElementById('menuToggle');
-const sideMenu = document.getElementById('sideMenu');
+document.addEventListener("DOMContentLoaded", () => {
+  const menuToggle = document.getElementById('menuToggle');
+  const sideMenu = document.getElementById('sideMenu');
 
-menuToggle.addEventListener('click', () => {
-  sideMenu.classList.toggle('active');
+  menuToggle.addEventListener('click', () => {
+    sideMenu.classList.toggle('active');
+  });
 });
-</script>
+
