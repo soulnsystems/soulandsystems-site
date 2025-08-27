@@ -13,3 +13,12 @@ window.onbeforeunload = function () {
 window.addEventListener("load", function() {
   setTimeout(() => window.scrollTo(0, 0), 0);
 });
+
+// Close side menu when a link is clicked
+const sideMenuLinks = document.querySelectorAll('#sideMenu a');
+
+sideMenuLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    sideMenu.classList.remove('active');
+  });
+});
