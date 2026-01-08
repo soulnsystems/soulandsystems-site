@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const bookedYes = document.getElementById('bookedYes');
     const bookedNo = document.getElementById('bookedNo');
 
-    coachingBtn.addEventListener('click', () => coachingModal.style.display = 'block');
+    coachingBtn.addEventListener('click', (e) => {e.preventDefault(); workshopModal.style.display = 'block';});
     closeCoaching.addEventListener('click', () => coachingModal.style.display = 'none');
 
     // User clicks Yes → just close Coaching modal
@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const workshopModal = document.getElementById('workshopModal');
   if(workshopBtn && workshopModal){
     const closeWorkshop = workshopModal.querySelector('.close');
-    workshopBtn.addEventListener('click', () => workshopModal.style.display = 'block');
+    workshopBtn.addEventListener('click', (e) => {e.preventDefault(); workshopModal.style.display = 'block';});
     closeWorkshop.addEventListener('click', () => workshopModal.style.display = 'none');
     window.addEventListener('click', e => { if(e.target === workshopModal) workshopModal.style.display = 'none'; });
   }
