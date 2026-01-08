@@ -1,134 +1,158 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Library — Soul and Systems</title>
-  <style>
-    body {
-      font-family: 'Helvetica Neue', sans-serif;
-      background-color: #f9f6f3;
-      color: #3a3a3a;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Evaluation Library — Soul and Systems</title>
 
-    header {
-      background-color: #e8e1dc;
-      padding: 40px 20px;
-      text-align: center;
-    }
+<style>
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #faf5f0;
+  color: #3a3a3a;
+  margin: 0;
+}
 
-    header h1 {
-      margin: 0;
-      font-size: 2em;
-      color: #5a4e47;
-    }
+/* Header */
+header {
+  padding: 60px 20px 30px;
+  text-align: center;
+}
+header h1 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+}
+header p {
+  max-width: 600px;
+  margin: 0 auto;
+  color: #6f645e;
+}
 
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 40px 20px;
-    }
+/* Cards */
+section {
+  padding: 40px 20px 80px;
+}
+.library-container {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 
-    .intro {
-      text-align: center;
-      margin-bottom: 40px;
-    }
+.library-card {
+  background-color: #fffaf6;
+  border-radius: 16px;
+  padding: 26px 22px;
+  width: 280px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-    .intro p {
-      font-size: 1.1em;
-      color: #5a4e47;
-    }
+.library-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+}
 
-    .resource-card {
-      background-color: #fff;
-      border-radius: 12px;
-      padding: 24px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-      margin-bottom: 40px;
-    }
+.library-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+}
 
-    .resource-card h2 {
-      margin-top: 0;
-      font-size: 1.4em;
-      color: #3a3a3a;
-    }
+.library-card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #5f554f;
+}
 
-    .resource-card p {
-      font-size: 1em;
-      color: #5a4e47;
-    }
+.library-card a {
+  display: inline-block;
+  margin-top: 14px;
+  padding: 10px 20px;
+  background-color: #9c8f86;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: 500;
+}
 
-    .button {
-      display: inline-block;
-      background-color: #9c8f86;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: bold;
-      margin-top: 15px;
-    }
+.signature {
+  margin-top: 14px;
+  font-style: italic;
+  font-size: 0.85rem;
+  color: #9b928b;
+}
 
-    footer {
-      text-align: center;
-      padding: 30px 20px;
-      font-size: 0.9em;
-      color: #a49c95;
-    }
+/* Navigation */
+.nav-back {
+  text-align: center;
+  margin: 80px 0;
+}
+.nav-back a {
+  display: inline-block;
+  padding: 12px 26px;
+  background-color: #e8e1dc;
+  color: #5a4e47;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: 500;
+  margin: 6px;
+}
 
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.6em;
-      }
-    }
-  </style>
+/* Footer */
+footer {
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 0.85rem;
+  color: #a49c95;
+}
+</style>
 </head>
-<div style="text-align:center; margin:80px 0;">
-  <a href="index.html"
-     style="
-       display:inline-block;
-       padding:12px 26px;
-       background-color:#9c8f86;
-       color:#ffffff;
-       text-decoration:none;
-       border-radius:10px;
-       font-weight:500;
-       margin-right:10px;
-     ">
-    ← Back to Home
-  </a>
-</div>
 
 <body>
 
-  <header>
-    <h1>The Library</h1>
-  </header>
+<header>
+  <h1>Evaluation Library</h1>
+  <p>
+    A space to pause, observe, and realign —
+    without urgency, without pressure.
+  </p>
+</header>
 
-  <div class="container">
-    <div class="intro">
-      <p>Enter softly. This is a space of clarity, rhythm, and calm — where you’re invited to explore and reconnect gently, at your own pace.</p>
+<section>
+  <div class="library-container">
+
+    <div class="library-card">
+      <h3>Anchored & Aware</h3>
+      <p>
+        A gentle mini-book to help you slow down,
+        reflect honestly, and take one aligned step.
+      </p>
+      <a href="library/Anchored_Awakened.pdf" download>
+        Download PDF
+      </a>
+      <div class="signature">— Soul and Systems</div>
     </div>
 
-    <div class="resource-card">
-      <h2>✨ Anchored & Aware</h2>
-      <p>Anchored & Aware is a mini-book to help you pause, observe, and take one small next step — no pressure, just presence.</p>
-      <a href="library\Anchored_Awakened.pdf" download="Anchored_Awakened.pdf" class="button">Access the Mini-Book</a>
-
-      <p style="margin-top: 20px; font-style: italic; color: #7c746f;">— Soul and Systems</p>
+    <!-- Future cards go here -->
+    <!-- Example:
+    <div class="library-card">
+      <h3>Self Evaluation</h3>
+      <p>Short reflective exercises to reconnect with yourself.</p>
+      <div class="signature">— Soul and Systems</div>
     </div>
+    -->
+
   </div>
-  <a href="evaluation-library.html" class="button">
-  Enter the Evaluation Library
-</a>
+</section>
 
+<div class="nav-back">
+  <a href="library.html">← Back to Library</a>
+  <a href="index.html">Back to Home</a>
+</div>
 
-  <footer>
-    &copy; 2026 Soul and Systems. All rights reserved.
-  </footer>
+<footer>
+  © 2026 Soul and Systems
+</footer>
 
 </body>
 </html>
