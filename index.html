@@ -36,7 +36,7 @@
   <h2 style="font-size: 2rem; margin-bottom: 40px;">Our Services</h2>
   
   <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px;">
-    
+
     <!-- Discovery Call -->
     <div style="flex: 1 1 300px; padding: 20px; border: 1px solid #eee; border-radius: 8px; background-color: #fdf7f0;">
       <h3>Discovery Call</h3>
@@ -45,44 +45,69 @@
       <p><strong>Outcome:</strong> Walk away with actionable insights and a clear next step.</p>
       <a href="#contact" id="bookCallBtn" class="book-btn" style="display: inline-block; padding: 10px 20px; background-color: #d9b382; color: #fff; text-decoration: none; border-radius: 5px;">Book Your Discovery Call</a>
     </div>
+
     <!-- Discovery Call Modal-->
     <div id="callModal" class="modal">
-  <div class="modal-content">
-    <span class="close">&times;</span>
-    <h2>Book Your Discovery Call</h2>
-    <p>Choose a time that works best for you. I’ll personally guide you through your next steps.</p>
-    <!-- Calendly inline embed -->
-    <div class="calendly-inline-widget" 
-         data-url="https://calendly.com/soulnsystems"
-         style="min-width:320px;height:600px;">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Book Your Discovery Call</h2>
+        <p>Choose a time that works best for you. I’ll personally guide you through your next steps.</p>
+        <div class="calendly-inline-widget" 
+             data-url="https://calendly.com/soulnsystems"
+             style="min-width:320px;height:600px;">
+        </div>
+      </div>
     </div>
-  </div>
-</div>
+
     <!-- Coaching -->
     <div style="flex: 1 1 300px; padding: 20px; border: 1px solid #eee; border-radius: 8px; background-color: #fdf7f0;">
       <h3>Coaching (Personal & Business)</h3>
       <p>One-on-one coaching tailored to your goals, combining practical systems with personal growth strategies.</p>
       <p><strong>Who it's for:</strong> Individuals or business leaders seeking alignment and progress.</p>
       <p><strong>Outcome:</strong> Greater clarity, balanced focus, and measurable results.</p>
-      <a href="#contact" style="display: inline-block; padding: 10px 20px; background-color: #d9b382; color: #fff; text-decoration: none; border-radius: 5px;">Start Your Coaching Journey</a>
+      <a href="#" id="coachingBtn" style="display: inline-block; padding: 10px 20px; background-color: #d9b382; color: #fff; text-decoration: none; border-radius: 5px;">Start Your Coaching Journey</a>
     </div>
-    
+
+    <!-- Coaching Modal -->
+    <div id="coachingModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Start Your Coaching Journey</h2>
+        <p>Have you booked your discovery call yet?</p>
+        <div style="margin-top:20px; display:flex; gap:15px; justify-content:center;">
+          <button id="bookedYes" style="padding:10px 20px; border:none; border-radius:5px; background-color:#d9b382; color:#fff;">Yes</button>
+          <button id="bookedNo" style="padding:10px 20px; border:none; border-radius:5px; background-color:#9c8f86; color:#fff;">No</button>
+        </div>
+      </div>
+    </div>
+
     <!-- Workshops -->
     <div id="workshops" style="flex: 1 1 300px; padding: 20px; border: 1px solid #eee; border-radius: 8px; background-color: #fdf7f0;">
       <h3>Workshops & Group Programs</h3>
       <p>Interactive sessions with tools, frameworks, and strategies for lasting impact.</p>
       <p><strong>Who it's for:</strong> Individuals or teams seeking growth and actionable strategies.</p>
       <p><strong>Outcome:</strong> Stronger systems, empowered decision-making, and a clear path forward.</p>
-      <a href="#contact" style="display: inline-block; padding: 10px 20px; background-color: #d9b382; color: #fff; text-decoration: none; border-radius: 5px;">Join a Workshop</a>
+      <a href="#" id="workshopBtn" style="display: inline-block; padding: 10px 20px; background-color: #d9b382; color: #fff; text-decoration: none; border-radius: 5px;">Join a Workshop</a>
     </div>
-    
+
+    <!-- Workshop Modal -->
+    <div id="workshopModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Join a Workshop</h2>
+        <p>Currently, there are no available slots.</p>
+        <p>You can reach out to us via email to be notified when new workshops open:</p>
+        <p><a href="mailto:soulnsystems@gmail.com">soulnsystems@gmail.com</a></p>
+      </div>
+    </div>
+
   </div>
 </section>
 
   <section class="offerings" id="offerings">
     <h2>Offerings & Downloads</h2>
     <ul>
-      <li><a href="#free-guides">Free Guides</a></li>
+      <li><a href="pages/evaluation-library.html">Free Guides</a></li>
       <li><a href="pages/library.html">Library</a></li>
       <li><a href="pages/journal.html">Templates & Journals</li>
     </ul>
