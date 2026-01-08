@@ -1,4 +1,6 @@
-// === MENU TOGGLE ===
+
+document.addEventListener("DOMContentLoaded", () => {
+  // === MENU TOGGLE ===
 const menuToggle = document.getElementById('menuToggle');
 const sideMenu = document.getElementById('sideMenu');
 const overlay = document.getElementById('overlay');
@@ -66,4 +68,6 @@ window.addEventListener('click', e => {
   if(e.target === coachingModal) coachingModal.style.display = 'none';
   if(e.target === workshopModal) workshopModal.style.display = 'none';
   if(e.target === callModal) callModal.style.display = 'none';
+});
+
 });
