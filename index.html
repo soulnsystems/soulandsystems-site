@@ -1,143 +1,1066 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Soul & Systems</title>
-  <link rel="stylesheet" href="css/styles.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Soul & Systems — Find Clarity. Build Something Yours.</title>
+<meta name="description" content="Coaching for people who feel lost in their career, their online presence, or their tech. Find clarity and build something that's truly yours.">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --terracotta: #C4704F;
+    --terracotta-light: #E8C4B0;
+    --terracotta-dark: #9A4F32;
+    --sage: #8A9E85;
+    --sage-light: #C8D8C5;
+    --sage-dark: #5C7358;
+    --cream: #FAF6F0;
+    --cream-dark: #F0E9DF;
+    --espresso: #2C1A0E;
+    --espresso-light: #5C3D26;
+    --gold: #C9A84C;
+    --gold-light: #E8D4A0;
+    --white: #FFFFFF;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--espresso);
+    font-size: 16px;
+    line-height: 1.7;
+  }
+
+  .display { font-family: 'Cormorant Garamond', serif; }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(250,246,240,0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--terracotta-light);
+    padding: 0 2rem;
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--espresso);
+    text-decoration: none;
+    letter-spacing: 0.02em;
+  }
+
+  .nav-logo span { color: var(--terracotta); }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: var(--espresso-light);
+    text-decoration: none;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--terracotta); }
+
+  .nav-cta {
+    background: var(--terracotta);
+    color: var(--white) !important;
+    padding: 0.5rem 1.25rem;
+    border-radius: 2px;
+  }
+
+  .nav-cta:hover { background: var(--terracotta-dark); color: var(--white) !important; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    padding: 120px 2rem 80px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: 1.25rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .hero-eyebrow::before {
+    content: '';
+    display: block;
+    width: 32px;
+    height: 1px;
+    background: var(--terracotta);
+  }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 5vw, 4.5rem);
+    font-weight: 500;
+    line-height: 1.1;
+    color: var(--espresso);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--terracotta);
+  }
+
+  .hero-sub {
+    font-size: 1.125rem;
+    color: var(--espresso-light);
+    margin-bottom: 2.5rem;
+    max-width: 480px;
+    line-height: 1.8;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .btn-primary {
+    background: var(--terracotta);
+    color: var(--white);
+    padding: 0.875rem 2rem;
+    border: none;
+    border-radius: 2px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    display: inline-block;
+  }
+
+  .btn-primary:hover { background: var(--terracotta-dark); transform: translateY(-1px); }
+
+  .btn-ghost {
+    background: transparent;
+    color: var(--espresso);
+    padding: 0.875rem 2rem;
+    border: 1px solid var(--espresso-light);
+    border-radius: 2px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: inline-block;
+  }
+
+  .btn-ghost:hover {
+    border-color: var(--terracotta);
+    color: var(--terracotta);
+  }
+
+  /* HERO IMAGE SIDE */
+  .hero-visual {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-img-frame {
+    width: 100%;
+    max-width: 440px;
+    aspect-ratio: 3/4;
+    background: var(--cream-dark);
+    border-radius: 4px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--terracotta-light);
+  }
+
+  .hero-img-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    color: var(--terracotta);
+  }
+
+  .hero-img-placeholder svg { opacity: 0.4; }
+
+  .hero-img-placeholder p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: var(--espresso-light);
+    text-align: center;
+    padding: 0 2rem;
+    opacity: 0.6;
+  }
+
+  .hero-badge {
+    position: absolute;
+    bottom: -20px;
+    left: -20px;
+    background: var(--gold);
+    color: var(--espresso);
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1.4;
+    box-shadow: 0 4px 20px rgba(201,168,76,0.3);
+  }
+
+  /* TRUST BAR */
+  .trust-bar {
+    background: var(--espresso);
+    padding: 1.25rem 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    flex-wrap: wrap;
+  }
+
+  .trust-item {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--terracotta-light);
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 400;
+  }
+
+  .trust-item::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--gold);
+  }
+
+  /* QUOTE SECTION */
+  .quote-section {
+    padding: 5rem 2rem;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .quote-section blockquote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-style: italic;
+    font-weight: 400;
+    color: var(--espresso);
+    line-height: 1.4;
+    margin-bottom: 1rem;
+  }
+
+  .quote-section cite {
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    font-style: normal;
+  }
+
+  /* SERVICES */
+  .services {
+    padding: 5rem 2rem;
+    background: var(--cream-dark);
+  }
+
+  .section-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .section-eyebrow {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 500;
+    color: var(--espresso);
+    line-height: 1.2;
+  }
+
+  .section-title em { font-style: italic; color: var(--terracotta); }
+
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .service-card {
+    background: var(--white);
+    border: 1px solid var(--terracotta-light);
+    border-radius: 4px;
+    padding: 2.5rem 2rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--terracotta);
+    transform: scaleX(0);
+    transition: transform 0.3s;
+    transform-origin: left;
+  }
+
+  .service-card:hover::before { transform: scaleX(1); }
+
+  .service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(44,26,14,0.08);
+  }
+
+  .service-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--cream);
+    border: 1px solid var(--terracotta-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.25rem;
+  }
+
+  .service-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--espresso);
+    margin-bottom: 0.75rem;
+  }
+
+  .service-card p {
+    font-size: 0.9375rem;
+    color: var(--espresso-light);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+
+  .service-tag {
+    display: inline-block;
+    background: var(--cream);
+    border: 1px solid var(--sage-light);
+    color: var(--sage-dark);
+    font-size: 0.75rem;
+    padding: 0.25rem 0.75rem;
+    border-radius: 2px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  /* FREE GUIDE */
+  .guide-section {
+    padding: 6rem 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .guide-visual {
+    position: relative;
+  }
+
+  .guide-book {
+    background: var(--terracotta);
+    border-radius: 4px;
+    aspect-ratio: 3/4;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 2rem;
+    text-align: center;
+    position: relative;
+  }
+
+  .guide-book::after {
+    content: '';
+    position: absolute;
+    top: 8px; right: -8px; bottom: -8px; left: 8px;
+    border: 1px solid var(--gold);
+    border-radius: 4px;
+    z-index: -1;
+  }
+
+  .guide-book h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.75rem;
+    font-style: italic;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+    font-weight: 400;
+  }
+
+  .guide-book p {
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.75);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+  }
+
+  .guide-book-badge {
+    background: var(--gold);
+    color: var(--espresso);
+    font-size: 0.7rem;
+    font-weight: 500;
+    padding: 0.4rem 1rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-radius: 2px;
+  }
+
+  .guide-content h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
+    font-weight: 500;
+    color: var(--espresso);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .guide-content h2 em { font-style: italic; color: var(--terracotta); }
+
+  .guide-content p {
+    color: var(--espresso-light);
+    margin-bottom: 1.5rem;
+    font-size: 0.9375rem;
+  }
+
+  .guide-list {
+    list-style: none;
+    margin-bottom: 2rem;
+  }
+
+  .guide-list li {
+    padding: 0.6rem 0;
+    font-size: 0.9375rem;
+    color: var(--espresso);
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    border-bottom: 1px solid var(--cream-dark);
+  }
+
+  .guide-list li::before {
+    content: '✦';
+    color: var(--gold);
+    font-size: 0.6rem;
+    margin-top: 0.45rem;
+    flex-shrink: 0;
+  }
+
+  /* OPT-IN FORM */
+  .optin-section {
+    background: var(--espresso);
+    padding: 5rem 2rem;
+    text-align: center;
+  }
+
+  .optin-inner {
+    max-width: 560px;
+    margin: 0 auto;
+  }
+
+  .optin-section h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 500;
+    color: var(--cream);
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+  }
+
+  .optin-section h2 em { color: var(--gold); font-style: italic; }
+
+  .optin-section p {
+    color: rgba(250,246,240,0.65);
+    font-size: 0.9375rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .optin-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .optin-form input {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    background: rgba(250,246,240,0.08);
+    border: 1px solid rgba(250,246,240,0.2);
+    border-radius: 2px;
+    color: var(--cream);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.9375rem;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+
+  .optin-form input::placeholder { color: rgba(250,246,240,0.4); }
+  .optin-form input:focus { border-color: var(--gold); }
+
+  .optin-form button {
+    width: 100%;
+    padding: 1rem;
+    background: var(--terracotta);
+    color: var(--white);
+    border: none;
+    border-radius: 2px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.875rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 0.2s;
+  }
+
+  .optin-form button:hover { background: var(--terracotta-dark); }
+
+  .optin-note {
+    margin-top: 1rem;
+    font-size: 0.75rem;
+    color: rgba(250,246,240,0.4);
+    letter-spacing: 0.04em;
+  }
+
+  /* TESTIMONIALS */
+  .testimonials {
+    padding: 5rem 2rem;
+    background: var(--cream-dark);
+  }
+
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 3rem auto 0;
+  }
+
+  .testimonial-card {
+    background: var(--white);
+    border: 1px solid var(--terracotta-light);
+    border-radius: 4px;
+    padding: 2rem;
+  }
+
+  .testimonial-card blockquote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--espresso);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .author-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--terracotta-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--terracotta-dark);
+    flex-shrink: 0;
+  }
+
+  .author-info p:first-child {
+    font-weight: 500;
+    font-size: 0.875rem;
+    color: var(--espresso);
+  }
+
+  .author-info p:last-child {
+    font-size: 0.75rem;
+    color: var(--espresso-light);
+    letter-spacing: 0.04em;
+  }
+
+  /* ABOUT STRIP */
+  .about-strip {
+    padding: 5rem 2rem;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  .about-img {
+    aspect-ratio: 1;
+    max-width: 380px;
+    background: var(--sage-light);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    color: var(--sage-dark);
+    border: 1px solid var(--sage);
+  }
+
+  .about-img p {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 0.9rem;
+    color: var(--sage-dark);
+    opacity: 0.7;
+    text-align: center;
+    padding: 0 2rem;
+  }
+
+  .about-content h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
+    font-weight: 500;
+    color: var(--espresso);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+
+  .about-content h2 em { font-style: italic; color: var(--terracotta); }
+
+  .about-content p {
+    color: var(--espresso-light);
+    font-size: 0.9375rem;
+    margin-bottom: 1rem;
+    line-height: 1.8;
+  }
+
+  .about-values {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .about-value {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .about-value span:first-child {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 600;
+    color: var(--terracotta);
+    line-height: 1;
+  }
+
+  .about-value span:last-child {
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--espresso-light);
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--espresso);
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+
+  .footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--cream);
+    margin-bottom: 0.5rem;
+  }
+
+  .footer-logo span { color: var(--terracotta); }
+
+  .footer-tagline {
+    font-size: 0.8rem;
+    color: rgba(250,246,240,0.5);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+  }
+
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .footer-links a {
+    font-size: 0.8rem;
+    color: rgba(250,246,240,0.5);
+    text-decoration: none;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .footer-links a:hover { color: var(--terracotta); }
+
+  .footer-copy {
+    font-size: 0.75rem;
+    color: rgba(250,246,240,0.3);
+  }
+
+  /* DIVIDER */
+  .divider {
+    width: 48px;
+    height: 1px;
+    background: var(--terracotta);
+    margin: 0 auto 2rem;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    nav { padding: 0 1.25rem; }
+    .nav-links { display: none; }
+
+    .hero {
+      grid-template-columns: 1fr;
+      padding: 100px 1.5rem 60px;
+      gap: 3rem;
+    }
+
+    .hero-visual { order: -1; }
+    .hero-img-frame { max-width: 100%; aspect-ratio: 4/3; }
+
+    .guide-section {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      padding: 4rem 1.5rem;
+    }
+
+    .about-strip {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      padding: 4rem 1.5rem;
+    }
+
+    .trust-bar { gap: 1.5rem; }
+    .services { padding: 4rem 1.5rem; }
+    .testimonials { padding: 4rem 1.5rem; }
+  }
+</style>
 </head>
 <body>
 
- <!-- Navigation -->
-<nav id="sideMenu" class="side-menu">
-  <ul>
-    <li><a href="#hero">Home</a></li>
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Soul <span>&</span> Systems</a>
+  <ul class="nav-links">
+    <li><a href="#services">Work with me</a></li>
+    <li><a href="#guide">Free guide</a></li>
     <li><a href="#about">About</a></li>
-    <li><a href="#services">Services</a></li>
-    <li><a href="#workshops">Workshops</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="pages/library.html">Library</a></li>
+    <li><a href="#connect" class="nav-cta">Start here</a></li>
   </ul>
 </nav>
-  
-<div id="overlay" class="overlay"></div>
-  
-  <header id="hero" class="hero">
-    <h1>Soul & Systems</h1>
-    <p>Build from the inside out.</p>
-    <a href="#offerings" class="cta-button">Explore Offerings</a>
-  </header>
-  <section class="about" id="about">
-    <h2>About</h2>
-    <p>Soul & Systems is a space for clarity, confidence, and aligned action. We help you build both the inner foundation and the external systems to move forward with intention.</p>
-  </section>
-<!-- Services Section -->
-<section id="services" style="padding: 60px 20px; background-color: #ffffff; text-align: center;">
-  <h2 style="font-size: 2rem; margin-bottom: 40px;">Our Services</h2>
-  
-  <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 30px;">
 
-    <!-- Discovery Call -->
-    <div style="flex: 1 1 300px; padding: 20px; border: 1px solid #eee; border-radius: 8px; background-color: #fdf7f0;">
-      <h3>Discovery Call</h3>
-      <p>A 45-minute session to uncover your challenges and identify opportunities for alignment.</p>
-      <p><strong>Who it's for:</strong> Individuals, entrepreneurs, or leaders seeking clarity.</p>
-      <p><strong>Outcome:</strong> Walk away with actionable insights and a clear next step.</p>
-      <a href="#contact" id="bookCallBtn" class="book-btn" style="display: inline-block; padding: 10px 20px; background-color: #d9b382; color: #fff; text-decoration: none; border-radius: 5px;">Book Your Discovery Call</a>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-text">
+    <p class="hero-eyebrow">For the ones who know they're meant for more</p>
+    <h1>You don't have to<br><em>figure it out</em><br>alone.</h1>
+    <p class="hero-sub">Whether you're changing careers, building your presence online, or finally setting up the systems that hold your vision together — this is where clarity begins.</p>
+    <div class="hero-actions">
+      <a href="#connect" class="btn-primary">Get the free guide</a>
+      <a href="#services" class="btn-ghost">See how I help</a>
     </div>
+  </div>
 
-    <!-- Discovery Call Modal-->
-    <div id="callModal" class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2>Book Your Discovery Call</h2>
-        <p>Choose a time that works best for you. I’ll personally guide you through your next steps.</p>
-        <div class="calendly-inline-widget" 
-             data-url="https://calendly.com/soulnsystems"
-             style="min-width:320px;height:600px;">
-        </div>
+  <div class="hero-visual">
+    <div class="hero-img-frame">
+      <div class="hero-img-placeholder">
+        <svg width="48" height="48" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+          <circle cx="12" cy="7" r="4"/>
+        </svg>
+        <p>Add your photo here — a warm, natural image of you works best</p>
       </div>
     </div>
+    <div class="hero-badge">Free<br>guide<br>inside</div>
+  </div>
+</section>
 
-    <!-- Coaching -->
-    <div style="flex: 1 1 300px; padding: 20px; border: 1px solid #eee; border-radius: 8px; background-color: #fdf7f0;">
-      <h3>Coaching (Personal & Business)</h3>
-      <p>One-on-one coaching tailored to your goals, combining practical systems with personal growth strategies.</p>
-      <p><strong>Who it's for:</strong> Individuals or business leaders seeking alignment and progress.</p>
-      <p><strong>Outcome:</strong> Greater clarity, balanced focus, and measurable results.</p>
-      <a href="#" id="coachingBtn" style="display: inline-block; padding: 10px 20px; background-color: #d9b382; color: #fff; text-decoration: none; border-radius: 5px;">Start Your Coaching Journey</a>
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item">Career Clarity Coaching</div>
+  <div class="trust-item">Creator & Online Presence</div>
+  <div class="trust-item">Tech & Systems Setup</div>
+  <div class="trust-item">CV & Job Applications</div>
+</div>
+
+<!-- QUOTE -->
+<section class="quote-section">
+  <div class="divider"></div>
+  <blockquote>"The journey to building something yours starts with one honest question: what do I actually want?"</blockquote>
+  <cite>— Soul & Systems</cite>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="section-header">
+    <p class="section-eyebrow">How I can help</p>
+    <h2 class="section-title">Three paths.<br><em>One destination.</em></h2>
+  </div>
+  <div class="services-grid">
+
+    <div class="service-card">
+      <div class="service-icon">🧭</div>
+      <h3>Career Clarity</h3>
+      <p>You know your current path isn't right. You've lived the confusion, the applications, the silence. I help you get honest about what you want — and build a plan that actually moves you forward.</p>
+      <span class="service-tag">1-on-1 coaching</span>
+      <span class="service-tag">CV & applications</span>
+      <span class="service-tag">Career change</span>
     </div>
 
-    <!-- Coaching Modal -->
-    <div id="coachingModal" class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2>Start Your Coaching Journey</h2>
-        <p>Have you booked your discovery call yet?</p>
-        <div style="margin-top:20px; display:flex; gap:15px; justify-content:center;">
-          <button id="bookedYes" style="padding:10px 20px; border:none; border-radius:5px; background-color:#d9b382; color:#fff;">Yes</button>
-          <button id="bookedNo" style="padding:10px 20px; border:none; border-radius:5px; background-color:#9c8f86; color:#fff;">No</button>
-        </div>
-      </div>
+    <div class="service-card">
+      <div class="service-icon">🌱</div>
+      <h3>Creator Coaching</h3>
+      <p>You have something to say and share. Whether you're starting from zero or trying to make your presence feel real and consistent, we build the foundation together — voice, strategy, systems.</p>
+      <span class="service-tag">Online presence</span>
+      <span class="service-tag">Content strategy</span>
+      <span class="service-tag">Brand clarity</span>
     </div>
 
-    <!-- Workshops -->
-    <div id="workshops" style="flex: 1 1 300px; padding: 20px; border: 1px solid #eee; border-radius: 8px; background-color: #fdf7f0;">
-      <h3>Workshops & Group Programs</h3>
-      <p>Interactive sessions with tools, frameworks, and strategies for lasting impact.</p>
-      <p><strong>Who it's for:</strong> Individuals or teams seeking growth and actionable strategies.</p>
-      <p><strong>Outcome:</strong> Stronger systems, empowered decision-making, and a clear path forward.</p>
-      <a href="#" id="workshopBtn" style="display: inline-block; padding: 10px 20px; background-color: #d9b382; color: #fff; text-decoration: none; border-radius: 5px;">Join a Workshop</a>
-    </div>
-
-    <!-- Workshop Modal -->
-    <div id="workshopModal" class="modal">
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2>Join a Workshop</h2>
-        <p>Currently, there are no available slots.</p>
-        <p>You can reach out to us via email to be notified when new workshops open:</p>
-        <p><a href="mailto:soulnsystems@gmail.com">soulnsystems@gmail.com</a></p>
-      </div>
+    <div class="service-card">
+      <div class="service-icon">🛠</div>
+      <h3>Tech & Systems</h3>
+      <p>Websites, emails, Vercel, Zoho — the tools that feel overwhelming until they don't. I help you set them up properly so they work for you, not against you.</p>
+      <span class="service-tag">Website setup</span>
+      <span class="service-tag">Email & DNS</span>
+      <span class="service-tag">Digital systems</span>
     </div>
 
   </div>
 </section>
 
-  <section class="offerings" id="offerings">
-    <h2>Offerings & Downloads</h2>
-    <ul>
-      <li><a href="pages/evaluation-library.html">Free Guides</a></li>
-      <li><a href="pages/library.html">Library</a></li>
-      <li><a href="pages/journal.html">Templates & Journals</li>
-    </ul>
-  </section>
-<section id="free-guides">
-  <a href="pages/evaluation-library.html" 
-   style="display: inline-block; background-color: #9c8f86; color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: bold; margin-top: 20px;">
-  ✨ Get the Evaluation Library
-</a>
-
+<!-- FREE GUIDE -->
+<section id="guide">
+  <div class="guide-section">
+    <div class="guide-visual">
+      <div class="guide-book">
+        <h3>From Lost<br>to Launched</h3>
+        <p>The career change roadmap</p>
+        <span class="guide-book-badge">Free PDF Guide</span>
+      </div>
+    </div>
+    <div class="guide-content">
+      <p class="section-eyebrow">Free for you</p>
+      <h2>The guide I wish I'd had when I was <em>starting over.</em></h2>
+      <p>I spent a year figuring out what no one told me — how to change careers, build an online presence, and set up the digital systems that actually hold a business together. I put everything into this guide.</p>
+      <ul class="guide-list">
+        <li>The 5 signs you're ready for a career change (and what to do next)</li>
+        <li>How to rewrite your story so employers and clients understand your value</li>
+        <li>The exact tools and systems I use to run Soul & Systems</li>
+        <li>A step-by-step action plan to move from confusion to clarity</li>
+      </ul>
+      <a href="#connect" class="btn-primary">Get the free guide</a>
+    </div>
+  </div>
 </section>
 
-  <section class="journal" id="journal">
-    <h2>Journal</h2>
-    <p>Reflections, insights, and confidence-building practices. Coming soon.</p>
-  </section>
+<!-- OPT-IN -->
+<section class="optin-section" id="connect">
+  <div class="optin-inner">
+    <h2>Ready to start<br><em>your next chapter?</em></h2>
+    <p>Join the Soul & Systems community. Get the free guide instantly, plus weekly clarity, tools, and honest coaching straight to your inbox.</p>
+    <form class="optin-form" onsubmit="handleSubmit(event)">
+      <input type="text" placeholder="Your first name" required>
+      <input type="email" placeholder="Your email address" required>
+      <button type="submit">Yes — send me the free guide ✦</button>
+    </form>
+    <p class="optin-note">No spam. No pressure. Unsubscribe anytime.</p>
+  </div>
+</section>
 
-  <section class="contact" id="contact">
-    <h2>Contact</h2>
-    <p>Email: soulnsystems@gmail.com</p>
-    <p>Follow on Instagram & TikTok: @soulandsystems</p>
-  </section>
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+  <div class="section-header">
+    <p class="section-eyebrow">What people say</p>
+    <h2 class="section-title">Real people.<br><em>Real shifts.</em></h2>
+  </div>
+  <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <blockquote>"I'd been stuck for two years. In one session, things finally clicked. I knew exactly what I needed to do next."</blockquote>
+      <div class="testimonial-author">
+        <div class="author-avatar">M</div>
+        <div class="author-info">
+          <p>Maria S.</p>
+          <p>Career change client</p>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <blockquote>"She helped me set up my entire online presence — website, email, everything — in a way that finally felt professional and mine."</blockquote>
+      <div class="testimonial-author">
+        <div class="author-avatar">J</div>
+        <div class="author-info">
+          <p>Jenny L.</p>
+          <p>Creator coaching client</p>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <blockquote>"The clarity I got from working together saved me months of going in circles. I now have a plan and the confidence to follow it."</blockquote>
+      <div class="testimonial-author">
+        <div class="author-avatar">A</div>
+        <div class="author-info">
+          <p>Aïcha D.</p>
+          <p>Systems & career client</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <footer>
-    <p>&copy; 2026 Soul & Systems. All rights reserved.</p>
-  </footer>
+<!-- ABOUT -->
+<section class="about-strip" id="about">
+  <div class="about-img">
+    <svg width="48" height="48" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1" opacity="0.5">
+      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+      <circle cx="12" cy="7" r="4"/>
+    </svg>
+    <p>Add a warm, natural photo of yourself here</p>
+  </div>
+  <div class="about-content">
+    <p class="section-eyebrow">About</p>
+    <h2>I've been <em>exactly</em> where you are.</h2>
+    <p>I spent years in the wrong career, struggling with the silence of job applications, the confusion of building something online, and the overwhelm of tools that no one explains properly.</p>
+    <p>So I figured it out — one painful, beautiful step at a time. And now I help others do the same, faster, and with someone in their corner.</p>
+    <p>Soul & Systems exists because clarity is not a luxury. It's the foundation everything else is built on.</p>
+    <div class="about-values">
+      <div class="about-value">
+        <span>1:1</span>
+        <span>Personalised coaching</span>
+      </div>
+      <div class="about-value">
+        <span>3</span>
+        <span>Ways to work together</span>
+      </div>
+      <div class="about-value">
+        <span>∞</span>
+        <span>Clarity, always</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-<!-- Calendly script -->
-<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
-  <script src="js/main.js">
-  </script>
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Soul <span>&</span> Systems</div>
+  <p class="footer-tagline">Find clarity. Build something yours.</p>
+  <ul class="footer-links">
+    <li><a href="#services">Work with me</a></li>
+    <li><a href="#guide">Free guide</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="mailto:admin@soulandsystems.co">admin@soulandsystems.co</a></li>
+  </ul>
+  <p class="footer-copy">© 2026 Soul & Systems. All rights reserved.</p>
+</footer>
+
+<script>
+function handleSubmit(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('button');
+  btn.textContent = 'You\'re in! Check your inbox ✦';
+  btn.style.background = '#8A9E85';
+  e.target.querySelectorAll('input').forEach(i => i.disabled = true);
+  btn.disabled = true;
+}
+</script>
+
 </body>
 </html>
