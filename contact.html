@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Soul &amp; Systems</title>
+<meta name="description" content="Book an intro call or ask a question about Soul & Systems.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site">
+  <div class="nav">
+    <a href="index.html" class="brand">Soul <span>&amp;</span> Systems</a>
+    <button class="menu-toggle" aria-label="Toggle menu" onclick="document.querySelector('.nav ul').classList.toggle('open')">&#9776;</button>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="method.html">Method</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+    <a href="contact.html" class="cta">Start here</a>
+  </div>
+</header>
+
+<section style="padding-top:64px;">
+  <div class="wrap grid-2" style="background:none;border:none;gap:64px;align-items:start;">
+    <div>
+      <span class="eyebrow">Start here</span>
+      <h1>Tell me what you're working toward.</h1>
+      <p style="font-size:17px;">Fill this in and I'll reply within two business days with next steps — usually a link to book the free Position Check call.</p>
+
+      <!--
+        This form is wired for Formspree (formspree.io), a free static-form
+        backend that works with GitHub Pages since there's no server here.
+        1. Create a free account at formspree.io
+        2. Create a form, copy the endpoint it gives you
+        3. Replace YOUR_FORM_ID below with that endpoint id
+      -->
+      <form class="contact" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div>
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div>
+          <label for="goal">What are you working toward?</label>
+          <select id="goal" name="goal">
+            <option>Job search / career move</option>
+            <option>Training or habit consistency</option>
+            <option>Content or creative growth</option>
+            <option>Something else</option>
+          </select>
+        </div>
+        <div>
+          <label for="message">A bit more detail</label>
+          <textarea id="message" name="message" placeholder="Where are you now, and where do you want to be?"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" style="align-self:flex-start;">Send</button>
+      </form>
+    </div>
+
+    <div>
+      <div class="photo-panel" style="margin-bottom:24px;"></div>
+      <h3>Prefer to book directly?</h3>
+      <p style="font-size:14px;">
+        <!-- Replace with your real Calendly/Cal.com link -->
+        Connect a scheduling link here (Calendly or Cal.com both work well and are free to start) so people can book the intro call without waiting on email.
+      </p>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="brand">Soul &amp; Systems</div>
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="method.html">Method</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+    <div class="footer-bottom">&copy; 2026 Soul &amp; Systems. All rights reserved.</div>
+  </div>
+</footer>
+
+</body>
+</html>
